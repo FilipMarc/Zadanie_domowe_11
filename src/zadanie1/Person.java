@@ -6,16 +6,28 @@ public class Person {
     private int age;
     private String pesel;
 
-    public Person(String firstName, String lastName, int age, String pesel) {
+    public Person(String firstName, String lastName, int age, String pesel) throws NameUndefinedException,
+            IncorrectAgeException {
+        exceptionConstruct(firstName,lastName,age,pesel);
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.pesel = pesel;
     }
 
+    private void exceptionConstruct(String firstName, String lastName, int age, String pesel)
+        throws NameUndefinedException, IncorrectAgeException
+    {
+        if (firstName.equals(null) || lastName.equals(null) || firstName.length() <=2 || lastName.length() <=2){
+            throw new NameUndefinedException("Imię lub nazwisko jest nullem lub ma mniej niż 2 znaki");
+        }else if (age <1){
+            throw new IncorrectAgeException("Jeśli wiek jest niższy niz 1");
+        }
+    }
+
     public String getFirstName() {
         return firstName;
-    } // Kliknąłem w minus nie zmniejszyłem go do 1 linijki.
+    }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
