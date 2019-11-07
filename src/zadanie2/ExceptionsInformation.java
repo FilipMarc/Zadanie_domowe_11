@@ -13,6 +13,6 @@ public class ExceptionsInformation {
                 "w sygnaturze metody/konstruktora zadeklarować wyjątek używając słowa throws");
 
         System.out.println("Do bloku try-catch możemy dodać dodatkowo blok" +
-                " finaly, który wykona się zawsze, niezależnie, czy w bloku try wyjątek wystąpił, czy nie");
+                " finally, który wykona się zawsze, niezależnie, czy w bloku try wyjątek wystąpił, czy nie");
     }
 }

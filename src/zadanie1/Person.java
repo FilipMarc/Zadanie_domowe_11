@@ -20,7 +20,7 @@ public class Person {
     {
         if (firstName.equals(null) || lastName.equals(null) || firstName.length() <=2 || lastName.length() <=2){
             throw new NameUndefinedException("Imię lub nazwisko jest nullem lub ma mniej niż 2 znaki");
-        }else if (age <1){
+        }else if (age < 1){
             throw new IncorrectAgeException("Jeśli wiek jest niższy niz 1");
         }
     }
