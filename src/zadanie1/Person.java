@@ -29,24 +29,33 @@ public class Person {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(String firstName) throws NameUndefinedException {
         this.firstName = firstName;
+        if (firstName==null ||firstName.length()<2){
+            throw new NameUndefinedException("Imię jest nullem lub jest mniejsze niż 2 znaki");
+        }
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName) throws NameUndefinedException{
         this.lastName = lastName;
+        if (firstName==null ||firstName.length()<2){
+            throw new NameUndefinedException("Nazwisko jest nullem lub jest mniejsze niż 2 znaki");
+        }
     }
 
     public int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(int age) throws IncorrectAgeException {
         this.age = age;
+        if (age<1){
+            throw new IncorrectAgeException("Wiek nie może być mniejszy niż 1");
+        }
     }
 
     public String getPesel() {
